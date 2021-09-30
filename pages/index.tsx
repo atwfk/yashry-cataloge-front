@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import type { ReactElement } from "react";
 import Head from "next/head";
+import CategoryPage from "@modules/CategoryPage/CategoryPage";
 
 const Home: NextPage = (): ReactElement => {
   return (
@@ -8,7 +9,7 @@ const Home: NextPage = (): ReactElement => {
       <Head>
         <title>Create Next App</title>
       </Head>
-      E Commerce app
+      <CategoryPage />
     </div>
   );
 };
