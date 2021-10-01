@@ -44,7 +44,9 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      margin: ["first", "last", "odd", "even", "hover"],
+    },
   },
   plugins: [],
 };
