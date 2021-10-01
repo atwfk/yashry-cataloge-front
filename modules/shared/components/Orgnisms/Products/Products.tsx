@@ -2,12 +2,13 @@ import React from "react";
 import type { FC, ReactElement } from "react";
 import type { IData } from "../../../../shared/types/IData";
 import Product from "../../molecules/Product/Product";
+import styles from "./Products.module.css";
 
 const products: FC<{ products: IData.IProduct[] }> = ({
   products,
 }): ReactElement => {
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-4 sm:grid-cols-2">
+    <div className={styles.products}>
       {products.map((product) => (
         <div key={product.id} data-testid="product">
           <Product

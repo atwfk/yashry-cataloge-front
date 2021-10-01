@@ -12,6 +12,7 @@ const Product: FC<IData.IProduct> = ({
   id,
   name,
   image,
+  currency,
 }): ReactElement => {
   return (
     <Box>
@@ -32,7 +33,8 @@ const Product: FC<IData.IProduct> = ({
         </P>
         <Stars rating={rating} />
         <P fontColor="accent" fontSize="sm" fontWeight="normal">
-          {price}
+          <span className="mr-1">{currency}</span>
+          <span>${price}</span>
         </P>
       </>
     </Box>
