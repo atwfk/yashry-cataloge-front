@@ -13,6 +13,7 @@ module.exports = {
   testMatch: ["**/?(*.)+(test).+(ts|js|tsx)"],
   //   globalSetup: "./setupEnv.ts",
   setupFilesAfterEnv: ["./setup-tests.ts"],
+  testEnvironment: "jsdom",
   testPathIgnorePatterns: ["./.next/", "./node_modules/"],
   coverageThreshold: {
     global: {
