@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkBtn should render link button with active={false} 1`] = `
+<a
+  href="/"
+  id="1"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  <p
+    className="text-base text-dark font-normal"
+  >
+    normal text
+  </p>
+</a>
+`;
+
+exports[`LinkBtn should render link button with active={true} 1`] = `
+<a
+  href="/"
+  id="1"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  <p
+    className="text-base text-accent font-normal"
+  >
+    normal text
+  </p>
+</a>
+`;
