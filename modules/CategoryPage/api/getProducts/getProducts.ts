@@ -5,7 +5,7 @@ import { generateErrMsg } from "../../../shared/logic/generateErrMsg/generateErr
 import { IData } from "../../../shared/types/IData";
 
 export const getProducts = async (
-  param?: number,
+  param?: string,
   queries?: string,
 ): Promise<IData.IProduct[]> => {
   try {

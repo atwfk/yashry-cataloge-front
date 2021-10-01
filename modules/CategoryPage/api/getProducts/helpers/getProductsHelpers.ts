@@ -5,7 +5,7 @@ export const errorMessage: Record<number, string> = {
   [EStatusCode.BadRequest]: "Something went wrong",
 };
 
-export const getUrl = (param?: number, queries?: string): string => {
+export const getUrl = (param?: string, queries?: string): string => {
   let url = "?";
 
   if (param) {
