@@ -13,7 +13,7 @@ const Home: FC<{ data: IData.IProduct[] }> = ({ data }): ReactElement => {
       <Head>
         <title>Create Next App</title>
       </Head>
-      <CategoryPage />
+      <CategoryPage data={data} />
     </div>
   );
 };

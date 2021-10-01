@@ -1,9 +1,16 @@
 import React from "react";
 import type { FC, ReactElement } from "react";
-import styles from "./CategoryPage.module.css";
+import Products from "@modules/shared/components/Orgnisms/Products/Products";
+import { IData } from "@modules/shared/types/IData";
 
-const CategoryPage: FC = (): ReactElement => {
-  return <div className={styles.div}>Category Page</div>;
+const CategoryPage: FC<{ data: IData.IProduct[] }> = ({
+  data,
+}): ReactElement => {
+  return (
+    <div>
+      <Products products={data} />
+    </div>
+  );
 };
 
 export default CategoryPage;
