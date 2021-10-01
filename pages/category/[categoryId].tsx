@@ -18,12 +18,14 @@ const Home: FC<{ data: IData.IProduct[] }> = ({ data }): ReactElement => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { query } = context;
+  const { query, params } = context;
+  console.log(query, params);
+  const { categoryId } = params as { categoryId: string };
 
   const queryString = transformQueries(query);
 
   try {
-    const data = await getProducts(undefined, queryString);
+    const data = await getProducts(categoryId, queryString);
 
     return {
       props: { data },
