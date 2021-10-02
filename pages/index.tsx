@@ -17,13 +17,12 @@ import {
 import { getMinMaxPrices } from "@modules/shared/logic/getMinMaxPrices/getMinMaxPrices";
 
 const Home: FC<IData.IProps> = ({ data }): ReactElement => {
-  console.log(data);
   return (
     <div>
       <Head>
         <title>Category | E-commerce</title>
       </Head>
-      <CategoryPage data={data.products} />
+      <CategoryPage data={data} />
     </div>
   );
 };

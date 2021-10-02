@@ -1,16 +1,14 @@
 import React from "react";
 import type { FC, ReactElement } from "react";
-import Products from "@modules/shared/components/organisms/Products/Products";
 import { IData } from "@modules/shared/types/IData";
 import Categories from "../components/Categories/Categories";
+import ProductFilters from "../components/ProductFilters/ProductFilters";
 
-const CategoryPage: FC<{ data: IData.IProduct[] }> = ({
-  data,
-}): ReactElement => {
+const CategoryPage: FC<IData.IProps> = ({ data }): ReactElement => {
   return (
     <>
       <Categories />
-      <Products products={data} />
+      <ProductFilters data={data} />
     </>
   );
 };
