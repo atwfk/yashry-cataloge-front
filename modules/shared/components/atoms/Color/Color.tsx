@@ -29,7 +29,12 @@ const Color: FC<IColor.IProps> = ({
           className={styles["color-bullet"]}
           style={{ backgroundColor: `${name}` }}
         ></div>
-        <P fontColor={pColor} fontSize="sm" fontWeight="normal">
+        <P
+          fontColor={pColor}
+          fontSize="sm"
+          fontWeight="normal"
+          classes="whitespace-nowrap"
+        >
           {name}
         </P>
       </label>
