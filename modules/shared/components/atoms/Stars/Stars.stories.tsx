@@ -3,7 +3,7 @@ import type { Story } from "@storybook/react";
 import Star from "./Stars";
 
 const args = {
-  title: "Atoms/Star",
+  title: "Atoms/Stars",
   component: Star,
   argTypes: {
     rating: {
@@ -15,11 +15,12 @@ const args = {
 
 export default args;
 
-const Template: Story<{ rating: number }> = (args): ReactElement => (
-  <Star {...args}>normal text</Star>
-);
+const Template: Story<{ rating: number; active: boolean }> = (
+  args,
+): ReactElement => <Star {...args}>normal text</Star>;
 
-export const star = Template.bind({});
-star.args = {
+export const stars = Template.bind({});
+stars.args = {
   rating: 3,
+  active: false,
 };
