@@ -1,0 +1,947 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Rating with snapshot should render active Rating component 1`] = `
+<div>
+  <input
+    checked={true}
+    className="w-0 h-0 absolute inset-0"
+    data-testid="rate-checkbox"
+    id="3"
+    name="3"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="cursor-pointer"
+    htmlFor="3"
+  >
+    <div
+      className="flex"
+    >
+      <div
+        className="w-8"
+      >
+        <div
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "display": "block",
+              "margin": 0,
+              "overflow": "hidden",
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "display": "block",
+                "paddingTop": "100%",
+              }
+            }
+          />
+          <img
+            alt="star"
+            data-nimg="responsive"
+            data-testid="filled-stars"
+            decoding="async"
+            id="0"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+          <noscript>
+            <img
+              alt="star"
+              data-nimg="responsive"
+              data-testid="filled-stars"
+              decoding="async"
+              id="0"
+              loading="lazy"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=3840&q=75"
+              srcSet="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=3840&q=75 3840w"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </noscript>
+        </div>
+      </div>
+      <div
+        className="w-8"
+      >
+        <div
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "display": "block",
+              "margin": 0,
+              "overflow": "hidden",
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "display": "block",
+                "paddingTop": "100%",
+              }
+            }
+          />
+          <img
+            alt="star"
+            data-nimg="responsive"
+            data-testid="filled-stars"
+            decoding="async"
+            id="1"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+          <noscript>
+            <img
+              alt="star"
+              data-nimg="responsive"
+              data-testid="filled-stars"
+              decoding="async"
+              id="1"
+              loading="lazy"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=3840&q=75"
+              srcSet="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=3840&q=75 3840w"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </noscript>
+        </div>
+      </div>
+      <div
+        className="w-8"
+      >
+        <div
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "display": "block",
+              "margin": 0,
+              "overflow": "hidden",
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "display": "block",
+                "paddingTop": "100%",
+              }
+            }
+          />
+          <img
+            alt="star"
+            data-nimg="responsive"
+            data-testid="filled-stars"
+            decoding="async"
+            id="2"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+          <noscript>
+            <img
+              alt="star"
+              data-nimg="responsive"
+              data-testid="filled-stars"
+              decoding="async"
+              id="2"
+              loading="lazy"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=3840&q=75"
+              srcSet="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F36%2F000000%2Ffilled-star.png&w=3840&q=75 3840w"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </noscript>
+        </div>
+      </div>
+      <div
+        className="w-8"
+      >
+        <div
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "display": "block",
+              "margin": 0,
+              "overflow": "hidden",
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "display": "block",
+                "paddingTop": "100%",
+              }
+            }
+          />
+          <img
+            alt="star"
+            data-nimg="responsive"
+            data-testid="not-filled-stars"
+            decoding="async"
+            id="3"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+          <noscript>
+            <img
+              alt="star"
+              data-nimg="responsive"
+              data-testid="not-filled-stars"
+              decoding="async"
+              id="3"
+              loading="lazy"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=3840&q=75"
+              srcSet="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=3840&q=75 3840w"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </noscript>
+        </div>
+      </div>
+      <div
+        className="w-8"
+      >
+        <div
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "display": "block",
+              "margin": 0,
+              "overflow": "hidden",
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "display": "block",
+                "paddingTop": "100%",
+              }
+            }
+          />
+          <img
+            alt="star"
+            data-nimg="responsive"
+            data-testid="not-filled-stars"
+            decoding="async"
+            id="4"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+          <noscript>
+            <img
+              alt="star"
+              data-nimg="responsive"
+              data-testid="not-filled-stars"
+              decoding="async"
+              id="4"
+              loading="lazy"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=3840&q=75"
+              srcSet="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios%2F36%2F000000%2Fchristmas-star.png&w=3840&q=75 3840w"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </noscript>
+        </div>
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`Testing Rating with snapshot should render inactive Rating component 1`] = `
+<div>
+  <input
+    checked={false}
+    className="w-0 h-0 absolute inset-0"
+    data-testid="rate-checkbox"
+    id="3"
+    name="3"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="cursor-pointer"
+    htmlFor="3"
+  >
+    <div
+      className="flex"
+    >
+      <div
+        className="w-8"
+      >
+        <div
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "display": "block",
+              "margin": 0,
+              "overflow": "hidden",
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "display": "block",
+                "paddingTop": "100%",
+              }
+            }
+          />
+          <img
+            alt="star"
+            data-nimg="responsive"
+            data-testid="filled-stars"
+            decoding="async"
+            id="0"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+          <noscript>
+            <img
+              alt="star"
+              data-nimg="responsive"
+              data-testid="filled-stars"
+              decoding="async"
+              id="0"
+              loading="lazy"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=3840&q=75"
+              srcSet="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=3840&q=75 3840w"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </noscript>
+        </div>
+      </div>
+      <div
+        className="w-8"
+      >
+        <div
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "display": "block",
+              "margin": 0,
+              "overflow": "hidden",
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "display": "block",
+                "paddingTop": "100%",
+              }
+            }
+          />
+          <img
+            alt="star"
+            data-nimg="responsive"
+            data-testid="filled-stars"
+            decoding="async"
+            id="1"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+          <noscript>
+            <img
+              alt="star"
+              data-nimg="responsive"
+              data-testid="filled-stars"
+              decoding="async"
+              id="1"
+              loading="lazy"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=3840&q=75"
+              srcSet="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=3840&q=75 3840w"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </noscript>
+        </div>
+      </div>
+      <div
+        className="w-8"
+      >
+        <div
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "display": "block",
+              "margin": 0,
+              "overflow": "hidden",
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "display": "block",
+                "paddingTop": "100%",
+              }
+            }
+          />
+          <img
+            alt="star"
+            data-nimg="responsive"
+            data-testid="filled-stars"
+            decoding="async"
+            id="2"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+          <noscript>
+            <img
+              alt="star"
+              data-nimg="responsive"
+              data-testid="filled-stars"
+              decoding="async"
+              id="2"
+              loading="lazy"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=3840&q=75"
+              srcSet="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Femoji%2F36%2F000000%2Fstar-emoji.png&w=3840&q=75 3840w"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </noscript>
+        </div>
+      </div>
+      <div
+        className="w-8"
+      >
+        <div
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "display": "block",
+              "margin": 0,
+              "overflow": "hidden",
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "display": "block",
+                "paddingTop": "100%",
+              }
+            }
+          />
+          <img
+            alt="star"
+            data-nimg="responsive"
+            data-testid="not-filled-stars"
+            decoding="async"
+            id="3"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+          <noscript>
+            <img
+              alt="star"
+              data-nimg="responsive"
+              data-testid="not-filled-stars"
+              decoding="async"
+              id="3"
+              loading="lazy"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=3840&q=75"
+              srcSet="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=3840&q=75 3840w"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </noscript>
+        </div>
+      </div>
+      <div
+        className="w-8"
+      >
+        <div
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "display": "block",
+              "margin": 0,
+              "overflow": "hidden",
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "display": "block",
+                "paddingTop": "100%",
+              }
+            }
+          />
+          <img
+            alt="star"
+            data-nimg="responsive"
+            data-testid="not-filled-stars"
+            decoding="async"
+            id="4"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+          <noscript>
+            <img
+              alt="star"
+              data-nimg="responsive"
+              data-testid="not-filled-stars"
+              decoding="async"
+              id="4"
+              loading="lazy"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=3840&q=75"
+              srcSet="/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F36%2F000000%2Fstar--v1.png&w=3840&q=75 3840w"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </noscript>
+        </div>
+      </div>
+    </div>
+  </label>
+</div>
+`;
