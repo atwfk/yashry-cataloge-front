@@ -19,6 +19,7 @@ const RatingFilter: FC<IRatingFilter.IProps> = ({
   selectedRatings,
   setSelectedRatings,
   prices,
+  setLoading,
 }): ReactElement => {
   const { query } = useRouter();
   const { categoryId } = query as { categoryId: string };
@@ -27,6 +28,8 @@ const RatingFilter: FC<IRatingFilter.IProps> = ({
     rateId: string,
     isChecked: boolean,
   ): Promise<void> => {
+    setLoading(true);
+
     const id = rateId[rateId.length - 1];
     let newSelectedRatings: number[] = [];
     if (isChecked) {
@@ -39,6 +42,7 @@ const RatingFilter: FC<IRatingFilter.IProps> = ({
       color: selectedColors,
       rating: newSelectedRatings,
     });
+    console.log(queryString);
 
     try {
       const data = await getProducts(categoryId, queryString);
@@ -54,6 +58,7 @@ const RatingFilter: FC<IRatingFilter.IProps> = ({
         newSelectedRatings.map(String) ?? "",
       );
 
+      setLoading(false);
       setProducts(filteredProducts);
       setSelectedRatings(newSelectedRatings);
       setRatings(filteredRatings);
@@ -63,6 +68,7 @@ const RatingFilter: FC<IRatingFilter.IProps> = ({
         errorCode,
         error: isError,
       } = error as { message: string; error: boolean; errorCode: number };
+      setLoading(false);
       console.log(message, errorCode, isError);
     }
   };

@@ -10,6 +10,7 @@ declare namespace IRatingFilter {
     selectedRatings: number[];
     setSelectedRatings: (selectedRatings: number[]) => void;
     prices: IData.IPrices;
+    setLoading: (loading: boolean) => void;
   }
 }
 

@@ -11,6 +11,7 @@ const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [ratings, setRatings] = useState(data.ratings);
   const [selectedRatings, setSelectedRatings] = useState<number[]>([]);
+  const [loading, setLoading] = useState(false);
   // const [prices, setPrices] = useState({
   //   min: data.prices.min,
   //   max: data.prices.max,
@@ -32,6 +33,7 @@ const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
               setSelectedColors={setSelectedColors}
               selectedRatings={selectedRatings}
               prices={data.prices}
+              setLoading={setLoading}
             />
           </div>
           <div>
@@ -44,12 +46,13 @@ const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
               selectedRatings={selectedRatings}
               setSelectedRatings={setSelectedRatings}
               prices={data.prices}
+              setLoading={setLoading}
             />
           </div>
         </div>
       </div>
       <div className="w-full">
-        <Products products={products} />
+        <Products products={products} loading={loading} />
       </div>
     </div>
   );

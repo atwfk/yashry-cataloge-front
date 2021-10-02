@@ -19,6 +19,7 @@ const ColorFilter: FC<IColorFilter.IProps> = ({
   setSelectedColors,
   selectedRatings,
   prices,
+  setLoading,
 }): ReactElement => {
   const { query } = useRouter();
   const { categoryId } = query as { categoryId: string };
@@ -27,6 +28,8 @@ const ColorFilter: FC<IColorFilter.IProps> = ({
     colorId: string,
     isChecked: boolean,
   ): Promise<void> => {
+    setLoading(true);
+
     let newSelectedColors: string[] = [];
     if (isChecked) {
       newSelectedColors = [...selectedColors, colorId];
@@ -53,6 +56,7 @@ const ColorFilter: FC<IColorFilter.IProps> = ({
         newSelectedColors ?? "",
       );
 
+      setLoading(false);
       setProducts(filteredProducts);
       setSelectedColors(newSelectedColors);
       setColors(filteredColors);
@@ -62,6 +66,7 @@ const ColorFilter: FC<IColorFilter.IProps> = ({
         errorCode,
         error: isError,
       } = error as { message: string; error: boolean; errorCode: number };
+      setLoading(false);
       console.log(message, errorCode, isError);
     }
   };

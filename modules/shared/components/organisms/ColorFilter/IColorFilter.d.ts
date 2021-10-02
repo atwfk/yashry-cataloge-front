@@ -10,6 +10,7 @@ declare namespace IColorFilter {
     setSelectedColors: (selectedColors: string[]) => void;
     selectedRatings: number[];
     prices: IData.IPrices;
+    setLoading: (loading: boolean) => void;
   }
 }
 
