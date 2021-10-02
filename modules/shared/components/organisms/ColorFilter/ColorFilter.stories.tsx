@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import type { Story } from "@storybook/react";
 import ColorFilter from "./ColorFilter";
-import { IData } from "../../../types/IData";
+import { IColorFilter } from "./IColorFilter";
 
 const args = {
   title: "Organisms/ColorFilter",
@@ -10,9 +10,7 @@ const args = {
 
 export default args;
 
-const Template: Story<{ colors: IData.IFilteredColors[] }> = (
-  args,
-): ReactElement => (
+const Template: Story<IColorFilter.IProps> = (args): ReactElement => (
   <div className="flex">
     <ColorFilter {...args} />
   </div>

@@ -1,42 +1,43 @@
 import React from "react";
 import type { FC, ReactElement } from "react";
-import Colors from "../../molecules/Colors/Colors";
+import Ratings from "../../molecules/Ratings/Ratings";
 import Box from "../../atoms/Box/Box";
 import P from "../../atoms/Paragraph/Paragraph";
-import { IColorFilter } from "./IColorFilter";
+import { IRatingFilter } from "./IRatingFilter";
 import { getProducts } from "@modules/CategoryPage/api/getProducts/getProducts";
 import { transformQueries } from "@modules/shared/logic/transformQueries/transformQueries";
 import { getProductsByPrice } from "@modules/shared/logic/getProductsByPrice/getProductsByPrice";
-import { createFilteredColors } from "@modules/shared/logic/productsColorsLogic/productsColorsLogic";
+import { createFilteredRatings } from "@modules/shared/logic/ProductsRatingsLogic/ProductsRatingsLogic";
 import { useRouter } from "next/router";
 
-const ColorFilter: FC<IColorFilter.IProps> = ({
-  colors,
+const RatingFilter: FC<IRatingFilter.IProps> = ({
   setProducts,
-  setColors,
-  uniqueColors,
+  ratings,
+  setRatings,
+  uniqueRatings,
   selectedColors,
-  setSelectedColors,
   selectedRatings,
+  setSelectedRatings,
   prices,
 }): ReactElement => {
   const { query } = useRouter();
   const { categoryId } = query as { categoryId: string };
 
-  const filterProductByColor = async (
-    colorId: string,
+  const filterProductByRating = async (
+    rateId: string,
     isChecked: boolean,
   ): Promise<void> => {
-    let newSelectedColors: string[] = [];
+    const id = rateId[rateId.length - 1];
+    let newSelectedRatings: number[] = [];
     if (isChecked) {
-      newSelectedColors = [...selectedColors, colorId];
+      newSelectedRatings = [...selectedRatings, +id];
     } else {
-      newSelectedColors = selectedColors.filter((color) => color !== colorId);
+      newSelectedRatings = selectedRatings.filter((rate) => rate !== +id);
     }
 
     const queryString = transformQueries({
-      color: newSelectedColors,
-      rating: selectedRatings,
+      color: selectedColors,
+      rating: newSelectedRatings,
     });
 
     try {
@@ -48,14 +49,14 @@ const ColorFilter: FC<IColorFilter.IProps> = ({
         +prices.to,
       );
 
-      const filteredColors = createFilteredColors(
-        uniqueColors,
-        newSelectedColors ?? "",
+      const filteredRatings = createFilteredRatings(
+        uniqueRatings,
+        newSelectedRatings.map(String) ?? "",
       );
 
       setProducts(filteredProducts);
-      setSelectedColors(newSelectedColors);
-      setColors(filteredColors);
+      setSelectedRatings(newSelectedRatings);
+      setRatings(filteredRatings);
     } catch (error: unknown) {
       const {
         message,
@@ -68,14 +69,17 @@ const ColorFilter: FC<IColorFilter.IProps> = ({
 
   return (
     <Box>
-      <div className="pt-4 px-4 flex flex-col self-start">
+      <div className="pt-4 px-4">
         <P fontColor="dark" fontSize="lg" fontWeight="bold" classes="mb-2">
-          COLORS
+          RATINGS
         </P>
-        <Colors colors={colors} filterProductByColor={filterProductByColor} />
+        <Ratings
+          ratings={ratings}
+          filterProductByRating={filterProductByRating}
+        />
       </div>
     </Box>
   );
 };
 
-export default ColorFilter;
+export default RatingFilter;
