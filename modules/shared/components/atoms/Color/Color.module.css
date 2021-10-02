@@ -7,5 +7,5 @@
 }
 
 .color-bullet {
-  @apply w-3 h-3 rounded-full ml-2;
+  @apply w-3 h-3 rounded-full mr-2;
 }

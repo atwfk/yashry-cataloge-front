@@ -19,19 +19,19 @@ const Color: FC<IColor.IProps> = ({
         id={name}
         className="mr-2"
         onChange={(e: ChangeEvent<HTMLInputElement>) => {
-          filterProductByColor(e.currentTarget.id);
+          filterProductByColor(e.currentTarget.id, e.target.checked);
         }}
         checked={active}
         data-testid="checkbox"
       />
       <label htmlFor={name} className={styles["color-label"]}>
-        <P fontColor={pColor} fontSize="sm" fontWeight="normal">
-          {name}
-        </P>
         <div
           className={styles["color-bullet"]}
           style={{ backgroundColor: `${name}` }}
         ></div>
+        <P fontColor={pColor} fontSize="sm" fontWeight="normal">
+          {name}
+        </P>
       </label>
     </div>
   );
