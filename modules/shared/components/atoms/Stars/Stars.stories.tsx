@@ -19,7 +19,7 @@ const Template: Story<{ rating: number }> = (args): ReactElement => (
   <Star {...args}>normal text</Star>
 );
 
-export const stars = Template.bind({});
-stars.args = {
+export const star = Template.bind({});
+star.args = {
   rating: 3,
 };
