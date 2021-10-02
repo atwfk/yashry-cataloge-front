@@ -28,10 +28,15 @@ const Product: FC<IData.IProduct> = ({
             id={`${id}`}
           />
         </div>
-        <P fontColor="dark" fontSize="md" fontWeight="medium">
+        <P
+          fontColor="dark"
+          fontSize="md"
+          fontWeight="medium"
+          classes="text-center"
+        >
           {name}
         </P>
-        <Stars rating={rating} />
+        <Stars rating={rating} active={false} />
         <P fontColor="accent" fontSize="sm" fontWeight="normal">
           <span className="mr-1">{currency}</span>
           <span>${price}</span>

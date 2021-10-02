@@ -6,14 +6,14 @@ exports[`Testing Rating with snapshot should render active Rating component 1`] 
     checked={true}
     className="w-0 h-0 absolute inset-0"
     data-testid="rate-checkbox"
-    id="3"
-    name="3"
+    id="rate-3"
+    name="rate-3"
     onChange={[Function]}
     type="checkbox"
   />
   <label
     className="cursor-pointer"
-    htmlFor="3"
+    htmlFor="rate-3"
   >
     <div
       className="flex"
@@ -479,14 +479,14 @@ exports[`Testing Rating with snapshot should render inactive Rating component 1`
     checked={false}
     className="w-0 h-0 absolute inset-0"
     data-testid="rate-checkbox"
-    id="3"
-    name="3"
+    id="rate-3"
+    name="rate-3"
     onChange={[Function]}
     type="checkbox"
   />
   <label
     className="cursor-pointer"
-    htmlFor="3"
+    htmlFor="rate-3"
   >
     <div
       className="flex"
