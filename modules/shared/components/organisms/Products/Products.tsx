@@ -1,6 +1,6 @@
 import React from "react";
 import type { FC, ReactElement } from "react";
-import type { IData } from "../../../../shared/types/IData";
+import type { IData } from "../../../types/IData";
 import Product from "../../molecules/Product/Product";
 import styles from "./Products.module.css";
 

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import type { FC, ReactElement } from "react";
 import { useRouter } from "next/router";
-import LinkBtns from "@modules/shared/components/Orgnisms/LinkBtns/LinkBtns";
+import LinkBtns from "@modules/shared/components/organisms/LinkBtns/LinkBtns";
 import { getCategories } from "@modules/CategoryPage/api/getCategories/getCategories";
-import { ILinkBtns } from "@modules/shared/components/Orgnisms/LinkBtns/ILinkBtns";
+import { ILinkBtns } from "@modules/shared/components/organisms/LinkBtns/ILinkBtns";
 
 const Categories: FC = (): ReactElement => {
   const [categories, setCategories] = useState<ILinkBtns.ILinkData[]>([]);
