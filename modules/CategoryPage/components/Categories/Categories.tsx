@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import LinkBtns from "@modules/shared/components/organisms/LinkBtns/LinkBtns";
 import { getCategories } from "@modules/CategoryPage/api/getCategories/getCategories";
 import { ILinkBtns } from "@modules/shared/components/organisms/LinkBtns/ILinkBtns";
+import { IError } from "@modules/shared/api/IError";
 
 const Categories: FC = (): ReactElement => {
   const [categories, setCategories] = useState<ILinkBtns.ILinkData[]>([]);
@@ -36,7 +37,7 @@ const Categories: FC = (): ReactElement => {
         setLoading(false);
         setCategories(categoryLinks);
       } catch (err) {
-        const { message } = err as { message: string };
+        const { message } = err as IError.IErrorData;
         setLoading(false);
         setError({ message });
       }

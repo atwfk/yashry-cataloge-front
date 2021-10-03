@@ -3,6 +3,7 @@ import { dataUrl } from "../../../shared/api/axiosConfig";
 import { addCategory, errorMessage } from "./helpers/getCategoriesHelpers";
 import { generateErrMsg } from "../../../shared/logic/generateErrMsg/generateErrMsg";
 import { IData } from "../../../shared/types/IData";
+import { IError } from "../../../shared/api/IError";
 
 export const getCategories = async (): Promise<IData.ICategory[]> => {
   try {
@@ -18,9 +19,7 @@ export const getCategories = async (): Promise<IData.ICategory[]> => {
 
     return newCategories;
   } catch (err: unknown) {
-    const { response } = err as {
-      response: { statusText: string; status: number };
-    };
+    const { response } = err as IError.IErrorResponse;
     const { message: errMessage } = err as { message: string };
 
     if (!response) {

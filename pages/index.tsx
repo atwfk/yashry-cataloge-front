@@ -15,11 +15,9 @@ import {
   getUniqueRatings,
 } from "@modules/shared/logic/ProductsRatingsLogic/ProductsRatingsLogic";
 import { getMinMaxPrices } from "@modules/shared/logic/getMinMaxPrices/getMinMaxPrices";
+import { IError } from "@modules/shared/api/IError";
 
 const Home: FC<IData.IProps> = ({ data }): ReactElement => {
-  // if (data.error) {
-  //   return <div>{data.message}</div>;
-  // }
   return (
     <div>
       <Head>
@@ -73,11 +71,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       },
     };
   } catch (error: unknown) {
-    const {
-      message,
-      errorCode,
-      error: isError,
-    } = error as { message: string; error: boolean; errorCode: number };
+    const { message, errorCode, error: isError } = error as IError.IErrorData;
 
     return {
       props: { data: { message, errorCode, error: isError } },

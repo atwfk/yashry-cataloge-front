@@ -15,15 +15,16 @@ import {
   getUniqueRatings,
 } from "@modules/shared/logic/ProductsRatingsLogic/ProductsRatingsLogic";
 import { getMinMaxPrices } from "@modules/shared/logic/getMinMaxPrices/getMinMaxPrices";
+import { IError } from "@modules/shared/api/IError";
 
-const Category: FC<IData.IProps> = ({ data }): ReactElement => {
-  // if (data.error) {
-  //   return <div>{error.message}</div>;
-  // }
+const Category: FC<IData.IProps & { category: string }> = ({
+  data,
+  category,
+}): ReactElement => {
   return (
     <div>
       <Head>
-        <title>category | E-commerce</title>
+        <title>{category} | E-commerce</title>
       </Head>
       <CategoryPage data={data} />
     </div>
@@ -79,11 +80,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       },
     };
   } catch (error: unknown) {
-    const {
-      message,
-      errorCode,
-      error: isError,
-    } = error as { message: string; error: boolean; errorCode: number };
+    const { message, errorCode, error: isError } = error as IError.IErrorData;
 
     return {
       props: { data: { message, errorCode, error: isError } },

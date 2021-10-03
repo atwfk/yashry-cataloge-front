@@ -11,6 +11,8 @@ import { getProductsByPrice } from "@modules/shared/logic/getProductsByPrice/get
 import { createFilteredColors } from "@modules/shared/logic/productsColorsLogic/productsColorsLogic";
 import { createFilteredRatings } from "@modules/shared/logic/ProductsRatingsLogic/ProductsRatingsLogic";
 import { useRouter } from "next/router";
+import withErrorHandler from "@modules/shared/components/HOC/WithErrorHandler/WithErrorHandler";
+import { IError } from "@modules/shared/api/IError";
 
 const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
   const [products, setProducts] = useState(data.products);
@@ -68,13 +70,9 @@ const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
       setRatings(filteredRatings);
       setPrices({ ...prices, from: updatedPrices.from, to: updatedPrices.to });
     } catch (error: unknown) {
-      const {
-        message,
-        errorCode,
-        error: isError,
-      } = error as { message: string; error: boolean; errorCode: number };
+      const { message } = error as IError.IErrorData;
       setLoading(false);
-      console.log(message, errorCode, isError);
+      console.log(message);
     }
   };
 
@@ -117,4 +115,4 @@ const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
   );
 };
 
-export default ProductFilters;
+export default withErrorHandler(ProductFilters);

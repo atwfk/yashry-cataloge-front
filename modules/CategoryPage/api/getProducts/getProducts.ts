@@ -3,6 +3,7 @@ import { dataUrl } from "../../../shared/api/axiosConfig";
 import { errorMessage, getUrl } from "./helpers/getProductsHelpers";
 import { generateErrMsg } from "../../../shared/logic/generateErrMsg/generateErrMsg";
 import { IData } from "../../../shared/types/IData";
+import { IError } from "../../../shared/api/IError";
 
 export const getProducts = async (
   param?: string,
@@ -17,9 +18,7 @@ export const getProducts = async (
 
     return data;
   } catch (err: unknown) {
-    const { response } = err as {
-      response: { statusText: string; status: number };
-    };
+    const { response } = err as IError.IErrorResponse;
     const { message: errMessage } = err as { message: string };
 
     if (!response) {
