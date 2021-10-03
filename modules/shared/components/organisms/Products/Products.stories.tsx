@@ -11,7 +11,7 @@ const args = {
 
 export default args;
 
-const Template: Story<{ products: IData.IProduct[] }> = (
+const Template: Story<{ products: IData.IProduct[]; loading: boolean }> = (
   args,
 ): ReactElement => (
   <div className="flex">
