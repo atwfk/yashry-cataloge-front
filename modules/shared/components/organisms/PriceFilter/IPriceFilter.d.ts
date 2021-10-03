@@ -5,9 +5,11 @@ declare namespace IPriceFilter {
     selectedColors: string[];
     selectedRatings: number[];
     prices: IData.IPrices;
-    setPrices: (prices: IData.IPrices) => void;
-    setProducts: (products: IData.IProduct[]) => void;
-    setLoading: (loading: boolean) => void;
+    updateProductFilters: (
+      selectedColors: string[],
+      selectedRatings: number[],
+      prices: IData.IPrices,
+    ) => void;
   }
 }
 

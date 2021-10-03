@@ -4,64 +4,18 @@ import Colors from "../../molecules/Colors/Colors";
 import Box from "../../atoms/Box/Box";
 import P from "../../atoms/Paragraph/Paragraph";
 import { IColorFilter } from "./IColorFilter";
-import { getProducts } from "@modules/CategoryPage/api/getProducts/getProducts";
-import { transformQueries } from "@modules/shared/logic/transformQueries/transformQueries";
-import { getProductsByPrice } from "@modules/shared/logic/getProductsByPrice/getProductsByPrice";
-import { createFilteredColors } from "@modules/shared/logic/productsColorsLogic/productsColorsLogic";
-import { useRouter } from "next/router";
 
 const ColorFilter: FC<IColorFilter.IProps> = ({
   colors,
-  setProducts,
-  setColors,
-  uniqueColors,
   selectedColors,
-  setSelectedColors,
   selectedRatings,
   prices,
-  setLoading,
+  updateProductFilters,
 }): ReactElement => {
-  const { query } = useRouter();
-  const { categoryId } = query as { categoryId: string };
-
-  const updateColorsFilter = async (colors: string[]): Promise<void> => {
-    const queryString = transformQueries({
-      color: colors,
-      rating: selectedRatings,
-    });
-
-    try {
-      const data = await getProducts(categoryId, queryString);
-
-      const filteredProducts = getProductsByPrice(
-        data,
-        +prices.from,
-        +prices.to,
-      );
-
-      const filteredColors = createFilteredColors(uniqueColors, colors ?? "");
-
-      setLoading(false);
-      setProducts(filteredProducts);
-      setSelectedColors(colors);
-      setColors(filteredColors);
-    } catch (error: unknown) {
-      const {
-        message,
-        errorCode,
-        error: isError,
-      } = error as { message: string; error: boolean; errorCode: number };
-      setLoading(false);
-      console.log(message, errorCode, isError);
-    }
-  };
-
   const filterProductByColor = async (
     colorId: string,
     isChecked: boolean,
   ): Promise<void> => {
-    setLoading(true);
-
     let newSelectedColors: string[] = [];
     if (isChecked) {
       newSelectedColors = [...selectedColors, colorId];
@@ -69,12 +23,11 @@ const ColorFilter: FC<IColorFilter.IProps> = ({
       newSelectedColors = selectedColors.filter((color) => color !== colorId);
     }
 
-    await updateColorsFilter(newSelectedColors);
+    await updateProductFilters(newSelectedColors, selectedRatings, prices);
   };
 
   const clearSelectedColors = async (): Promise<void> => {
-    setLoading(true);
-    await updateColorsFilter([]);
+    await updateProductFilters([], selectedRatings, prices);
   };
 
   return (
@@ -88,6 +41,7 @@ const ColorFilter: FC<IColorFilter.IProps> = ({
           type="reset"
           onClick={clearSelectedColors}
           className="self-start"
+          data-testid="reset-colors"
         >
           <P fontColor="dark" fontSize="md" fontWeight="normal" classes="mt-2">
             CLEAR

@@ -5,6 +5,12 @@ import Products from "@modules/shared/components/organisms/Products/Products";
 import ColorFilter from "@modules/shared/components/organisms/ColorFilter/ColorFilter";
 import RatingFilter from "@modules/shared/components/organisms/RatingFilter/RatingFilter";
 import PriceFilter from "@modules/shared/components/organisms/PriceFilter/PriceFilter";
+import { transformQueries } from "@modules/shared/logic/transformQueries/transformQueries";
+import { getProducts } from "@modules/CategoryPage/api/getProducts/getProducts";
+import { getProductsByPrice } from "@modules/shared/logic/getProductsByPrice/getProductsByPrice";
+import { createFilteredColors } from "@modules/shared/logic/productsColorsLogic/productsColorsLogic";
+import { createFilteredRatings } from "@modules/shared/logic/ProductsRatingsLogic/ProductsRatingsLogic";
+import { useRouter } from "next/router";
 
 const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
   const [products, setProducts] = useState(data.products);
@@ -20,44 +26,86 @@ const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
     to: data.prices.to,
   });
 
+  const { query } = useRouter();
+  const { categoryId } = query as { categoryId: string };
+
+  const updateProductFilters = async (
+    updatedSelectedColors: string[],
+    updatedSelectedRatings: number[],
+    updatedPrices: IData.IPrices,
+  ): Promise<void> => {
+    setLoading(true);
+
+    const queryString = transformQueries({
+      color: updatedSelectedColors,
+      rating: updatedSelectedRatings,
+    });
+
+    try {
+      const newProducts = await getProducts(categoryId, queryString);
+
+      const filteredProducts = getProductsByPrice(
+        newProducts,
+        updatedPrices.from,
+        updatedPrices.to,
+      );
+
+      const filteredColors = createFilteredColors(
+        data.uniqueColors,
+        updatedSelectedColors ?? "",
+      );
+
+      const filteredRatings = createFilteredRatings(
+        data.uniqueRatings,
+        updatedSelectedRatings.map(String) ?? "",
+      );
+
+      setLoading(false);
+      setProducts(filteredProducts);
+      setSelectedColors(updatedSelectedColors);
+      setColors(filteredColors);
+      setSelectedRatings(updatedSelectedRatings);
+      setRatings(filteredRatings);
+      setPrices({ ...prices, from: updatedPrices.from, to: updatedPrices.to });
+    } catch (error: unknown) {
+      const {
+        message,
+        errorCode,
+        error: isError,
+      } = error as { message: string; error: boolean; errorCode: number };
+      setLoading(false);
+      console.log(message, errorCode, isError);
+    }
+  };
+
   return (
     <div className="flex justify-center p-4">
       <div className="mr-6">
-        <div className="sticky h-screen overflow-y-scroll inset-0">
-          <div className="mb-3">
+        <div className="sticky h-screen overflow-y-scroll inset-0 space-y-3">
+          <div>
             <PriceFilter
               selectedColors={selectedColors}
               selectedRatings={selectedRatings}
               prices={prices}
-              setPrices={setPrices}
-              setProducts={setProducts}
-              setLoading={setLoading}
+              updateProductFilters={updateProductFilters}
             />
           </div>
-          <div className="mb-3">
+          <div>
             <ColorFilter
               colors={colors}
-              setProducts={setProducts}
-              setColors={setColors}
-              uniqueColors={data.uniqueColors}
               selectedColors={selectedColors}
-              setSelectedColors={setSelectedColors}
               selectedRatings={selectedRatings}
               prices={prices}
-              setLoading={setLoading}
+              updateProductFilters={updateProductFilters}
             />
           </div>
           <div>
             <RatingFilter
-              setProducts={setProducts}
               ratings={ratings}
-              setRatings={setRatings}
-              uniqueRatings={data.uniqueRatings}
               selectedColors={selectedColors}
               selectedRatings={selectedRatings}
-              setSelectedRatings={setSelectedRatings}
               prices={prices}
-              setLoading={setLoading}
+              updateProductFilters={updateProductFilters}
             />
           </div>
         </div>
