@@ -17,10 +17,13 @@ import {
 import { getMinMaxPrices } from "@modules/shared/logic/getMinMaxPrices/getMinMaxPrices";
 
 const Category: FC<IData.IProps> = ({ data }): ReactElement => {
+  // if (data.error) {
+  //   return <div>{error.message}</div>;
+  // }
   return (
     <div>
       <Head>
-        <title>Category | E-commerce</title>
+        <title>category | E-commerce</title>
       </Head>
       <CategoryPage data={data} />
     </div>
@@ -30,7 +33,11 @@ const Category: FC<IData.IProps> = ({ data }): ReactElement => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { query, params } = context;
   const { categoryId } = params as { categoryId: string };
-  const { from, to } = query as { from: string; to: string };
+  const { from, to, name } = query as {
+    from: string;
+    to: string;
+    name: string;
+  };
   const queryString = transformQueries(query);
 
   try {
@@ -68,6 +75,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             to: to ?? minMaxPrice[1],
           },
         },
+        category: name,
       },
     };
   } catch (error: unknown) {
@@ -76,6 +84,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       errorCode,
       error: isError,
     } = error as { message: string; error: boolean; errorCode: number };
+
     return {
       props: { data: { message, errorCode, error: isError } },
     };

@@ -24,6 +24,38 @@ const ColorFilter: FC<IColorFilter.IProps> = ({
   const { query } = useRouter();
   const { categoryId } = query as { categoryId: string };
 
+  const updateColorsFilter = async (colors: string[]): Promise<void> => {
+    const queryString = transformQueries({
+      color: colors,
+      rating: selectedRatings,
+    });
+
+    try {
+      const data = await getProducts(categoryId, queryString);
+
+      const filteredProducts = getProductsByPrice(
+        data,
+        +prices.from,
+        +prices.to,
+      );
+
+      const filteredColors = createFilteredColors(uniqueColors, colors ?? "");
+
+      setLoading(false);
+      setProducts(filteredProducts);
+      setSelectedColors(colors);
+      setColors(filteredColors);
+    } catch (error: unknown) {
+      const {
+        message,
+        errorCode,
+        error: isError,
+      } = error as { message: string; error: boolean; errorCode: number };
+      setLoading(false);
+      console.log(message, errorCode, isError);
+    }
+  };
+
   const filterProductByColor = async (
     colorId: string,
     isChecked: boolean,
@@ -37,38 +69,12 @@ const ColorFilter: FC<IColorFilter.IProps> = ({
       newSelectedColors = selectedColors.filter((color) => color !== colorId);
     }
 
-    const queryString = transformQueries({
-      color: newSelectedColors,
-      rating: selectedRatings,
-    });
+    await updateColorsFilter(newSelectedColors);
+  };
 
-    try {
-      const data = await getProducts(categoryId, queryString);
-
-      const filteredProducts = getProductsByPrice(
-        data,
-        +prices.from,
-        +prices.to,
-      );
-
-      const filteredColors = createFilteredColors(
-        uniqueColors,
-        newSelectedColors ?? "",
-      );
-
-      setLoading(false);
-      setProducts(filteredProducts);
-      setSelectedColors(newSelectedColors);
-      setColors(filteredColors);
-    } catch (error: unknown) {
-      const {
-        message,
-        errorCode,
-        error: isError,
-      } = error as { message: string; error: boolean; errorCode: number };
-      setLoading(false);
-      console.log(message, errorCode, isError);
-    }
+  const clearSelectedColors = async (): Promise<void> => {
+    setLoading(true);
+    await updateColorsFilter([]);
   };
 
   return (
@@ -78,6 +84,15 @@ const ColorFilter: FC<IColorFilter.IProps> = ({
           COLORS
         </P>
         <Colors colors={colors} filterProductByColor={filterProductByColor} />
+        <button
+          type="reset"
+          onClick={clearSelectedColors}
+          className="self-start"
+        >
+          <P fontColor="dark" fontSize="md" fontWeight="normal" classes="mt-2">
+            CLEAR
+          </P>
+        </button>
       </div>
     </Box>
   );

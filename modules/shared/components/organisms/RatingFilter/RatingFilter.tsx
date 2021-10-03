@@ -24,6 +24,41 @@ const RatingFilter: FC<IRatingFilter.IProps> = ({
   const { query } = useRouter();
   const { categoryId } = query as { categoryId: string };
 
+  const updateRatingsFilter = async (ratings: number[]): Promise<void> => {
+    const queryString = transformQueries({
+      color: selectedColors,
+      rating: ratings,
+    });
+
+    try {
+      const data = await getProducts(categoryId, queryString);
+
+      const filteredProducts = getProductsByPrice(
+        data,
+        +prices.from,
+        +prices.to,
+      );
+
+      const filteredRatings = createFilteredRatings(
+        uniqueRatings,
+        ratings.map(String) ?? "",
+      );
+
+      setLoading(false);
+      setProducts(filteredProducts);
+      setSelectedRatings(ratings);
+      setRatings(filteredRatings);
+    } catch (error: unknown) {
+      const {
+        message,
+        errorCode,
+        error: isError,
+      } = error as { message: string; error: boolean; errorCode: number };
+      setLoading(false);
+      console.log(message, errorCode, isError);
+    }
+  };
+
   const filterProductByRating = async (
     rateId: string,
     isChecked: boolean,
@@ -38,39 +73,12 @@ const RatingFilter: FC<IRatingFilter.IProps> = ({
       newSelectedRatings = selectedRatings.filter((rate) => rate !== +id);
     }
 
-    const queryString = transformQueries({
-      color: selectedColors,
-      rating: newSelectedRatings,
-    });
-    console.log(queryString);
+    await updateRatingsFilter(newSelectedRatings);
+  };
 
-    try {
-      const data = await getProducts(categoryId, queryString);
-
-      const filteredProducts = getProductsByPrice(
-        data,
-        +prices.from,
-        +prices.to,
-      );
-
-      const filteredRatings = createFilteredRatings(
-        uniqueRatings,
-        newSelectedRatings.map(String) ?? "",
-      );
-
-      setLoading(false);
-      setProducts(filteredProducts);
-      setSelectedRatings(newSelectedRatings);
-      setRatings(filteredRatings);
-    } catch (error: unknown) {
-      const {
-        message,
-        errorCode,
-        error: isError,
-      } = error as { message: string; error: boolean; errorCode: number };
-      setLoading(false);
-      console.log(message, errorCode, isError);
-    }
+  const clearSelectedRatings = async (): Promise<void> => {
+    setLoading(true);
+    await updateRatingsFilter([]);
   };
 
   return (
@@ -83,6 +91,15 @@ const RatingFilter: FC<IRatingFilter.IProps> = ({
           ratings={ratings}
           filterProductByRating={filterProductByRating}
         />
+        <button
+          type="reset"
+          onClick={clearSelectedRatings}
+          className="self-start"
+        >
+          <P fontColor="dark" fontSize="md" fontWeight="normal" classes="mt-2">
+            CLEAR
+          </P>
+        </button>
       </div>
     </Box>
   );

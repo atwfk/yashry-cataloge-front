@@ -4,6 +4,7 @@ import { IData } from "@modules/shared/types/IData";
 import Products from "@modules/shared/components/organisms/Products/Products";
 import ColorFilter from "@modules/shared/components/organisms/ColorFilter/ColorFilter";
 import RatingFilter from "@modules/shared/components/organisms/RatingFilter/RatingFilter";
+import PriceFilter from "@modules/shared/components/organisms/PriceFilter/PriceFilter";
 
 const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
   const [products, setProducts] = useState(data.products);
@@ -12,17 +13,27 @@ const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
   const [ratings, setRatings] = useState(data.ratings);
   const [selectedRatings, setSelectedRatings] = useState<number[]>([]);
   const [loading, setLoading] = useState(false);
-  // const [prices, setPrices] = useState({
-  //   min: data.prices.min,
-  //   max: data.prices.max,
-  //   from: data.prices.from,
-  //   to: data.prices.to,
-  // });
+  const [prices, setPrices] = useState({
+    min: data.prices.min,
+    max: data.prices.max,
+    from: data.prices.from,
+    to: data.prices.to,
+  });
 
   return (
     <div className="flex justify-center p-4">
       <div className="mr-6">
-        <div className="sticky h-screen inset-0">
+        <div className="sticky h-screen overflow-y-scroll inset-0">
+          <div className="mb-3">
+            <PriceFilter
+              selectedColors={selectedColors}
+              selectedRatings={selectedRatings}
+              prices={prices}
+              setPrices={setPrices}
+              setProducts={setProducts}
+              setLoading={setLoading}
+            />
+          </div>
           <div className="mb-3">
             <ColorFilter
               colors={colors}
@@ -32,7 +43,7 @@ const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
               selectedColors={selectedColors}
               setSelectedColors={setSelectedColors}
               selectedRatings={selectedRatings}
-              prices={data.prices}
+              prices={prices}
               setLoading={setLoading}
             />
           </div>
@@ -45,7 +56,7 @@ const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
               selectedColors={selectedColors}
               selectedRatings={selectedRatings}
               setSelectedRatings={setSelectedRatings}
-              prices={data.prices}
+              prices={prices}
               setLoading={setLoading}
             />
           </div>

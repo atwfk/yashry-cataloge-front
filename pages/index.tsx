@@ -17,10 +17,13 @@ import {
 import { getMinMaxPrices } from "@modules/shared/logic/getMinMaxPrices/getMinMaxPrices";
 
 const Home: FC<IData.IProps> = ({ data }): ReactElement => {
+  // if (data.error) {
+  //   return <div>{data.message}</div>;
+  // }
   return (
     <div>
       <Head>
-        <title>Category | E-commerce</title>
+        <title>All | E-commerce</title>
       </Head>
       <CategoryPage data={data} />
     </div>
@@ -75,6 +78,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       errorCode,
       error: isError,
     } = error as { message: string; error: boolean; errorCode: number };
+
     return {
       props: { data: { message, errorCode, error: isError } },
     };
