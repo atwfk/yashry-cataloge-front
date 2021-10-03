@@ -9,7 +9,11 @@ import { IError } from "@modules/shared/api/IError";
 const Categories: FC = (): ReactElement => {
   const [categories, setCategories] = useState<ILinkBtns.ILinkData[]>([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<{ message: string } | null>(null);
+  const [error, setError] = useState<IError.IErrorData>({
+    message: "",
+    error: false,
+    errorCode: 0,
+  });
   const { query } = useRouter();
 
   useEffect(() => {
@@ -37,15 +41,18 @@ const Categories: FC = (): ReactElement => {
         setLoading(false);
         setCategories(categoryLinks);
       } catch (err) {
-        const { message } = err as IError.IErrorData;
+        const { message, error, errorCode } = err as IError.IErrorData;
         setLoading(false);
-        setError({ message });
+        setError({ message, error, errorCode });
       }
     };
 
     fetchCategories();
   }, [query.categoryId]);
-  console.log(error);
+
+  if (error.error) {
+    return <div className="py-6 flex justify-center">{error.message}</div>;
+  }
 
   return (
     <div className="py-6 flex justify-center">

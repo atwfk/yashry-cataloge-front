@@ -13,6 +13,7 @@ import { createFilteredRatings } from "@modules/shared/logic/ProductsRatingsLogi
 import { useRouter } from "next/router";
 import withErrorHandler from "@modules/shared/components/HOC/WithErrorHandler/WithErrorHandler";
 import { IError } from "@modules/shared/api/IError";
+import { toast } from "react-toastify";
 
 const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
   const [products, setProducts] = useState(data.products);
@@ -72,7 +73,7 @@ const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
     } catch (error: unknown) {
       const { message } = error as IError.IErrorData;
       setLoading(false);
-      console.log(message);
+      toast.error(message);
     }
   };
 
