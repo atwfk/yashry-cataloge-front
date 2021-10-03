@@ -32,6 +32,7 @@ const PriceInput: FC<IPriceInput.IProps> = ({
           onChange={(e: ChangeEvent<HTMLInputElement>): void => {
             setMinPriceVal(+e.currentTarget.value);
           }}
+          data-testid="min-price"
         />
         <input
           type="number"
@@ -45,6 +46,7 @@ const PriceInput: FC<IPriceInput.IProps> = ({
           onChange={(e: ChangeEvent<HTMLInputElement>): void => {
             setMamPriceVal(+e.currentTarget.value);
           }}
+          data-testid="max-price"
         />
       </div>
     </div>

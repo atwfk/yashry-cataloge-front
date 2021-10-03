@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PriceInput snapshots should redner PriceInput with correct price values 1`] = `
+<div
+  className="flex flex-col"
+>
+  <p
+    className="text-base text-dark font-medium mb-2"
+  >
+    Prices: $
+    6
+     - $
+    1000
+  </p>
+  <div>
+    <input
+      className="border-2 border-dark-grey rounded-md w-16 mr-2"
+      data-testid="min-price"
+      id="minPrice"
+      name="min-price"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="number"
+      value={50}
+    />
+    <input
+      className="border-2 border-dark-grey rounded-md w-16"
+      data-testid="max-price"
+      id="maxPrice"
+      name="max-price"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="number"
+      value={150}
+    />
+  </div>
+</div>
+`;
