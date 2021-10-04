@@ -1,34 +1,115 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# yashry-cataloge-front
 
-## Getting Started
+E-commerce application to interact with products and filter them by Color, Ratings and Price.
 
-First, run the development server:
+## Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
+required packages on your machine:
+
+1. `Node.js`
+2. `yarn`
+
+## Install and Use
+
+To install the project you have to:
+
+1. Clone the repository:
+   `git clone https://github.com/atwfk/yashry-cataloge-front.git` or the `ssh url`.
+
+2. Install packages:
+   `yarn`
+
+3. Run the project:
+   `yarn dev`
+
+4. Run the tests:
+   `yarn test`
+
+5. Open storybook:
+   `yarn storybook`
+
+6. Build Project:
+   `yarn build`
+
+7. lint staged files:
+   `npx lint-staged`
+
+## Dependencies
+
+The project is built:-
+
+1. **NextJs**: for server side rendering - production ready - typescript support and dynamic routing.
+
+2. **TailwindCSS**: for utility classes and building reusable components with a set of variants.
+
+3. **Typescript**: for static type checking and catch any type error on run time.
+
+4. **Storybook**: for building dumb component and preview it in isolation and ensure it built in pixel perfect UI.
+
+5. **Jest & testing-library**: for unit testing.
+
+## Folder Structure
+
+The main folder structure of the code is structured like the following:
+
+```typescript
+├── modules
+│   ├── example // The module name
+│   │   ├── api
+│   │   │   ├── exampleOne
+│   │   │   │   ├── helpers
+│   │   │   │   │    ├── exampleOneHelpers.ts
+│   │   │   │   │    └── exampleOneHelpers.test.ts
+│   │   │   │   ├── exampleOne.ts
+│   │   │   │   └── exampleOne.test.ts
+│   │   ├── components
+│   │   │   └── ComponentOne
+│   │   │       ├── IComponentOne.d.tsx
+│   │   │       └── ComponentOne.tsx
+│   │   │       └── ComponentOne.test.tsx
+│   │   ├── pages
+│   │   │   └── Page.tsx
+│   └── shared
+│       ├── api
+│       │   └── example1.ts
+│       ├── components
+│       │   └── atoms
+│       │       └── AtomOne
+│       │               ├── IAtomOne.d.ts
+│       │               ├── AtomOne.tsx
+│       │               ├── AtomOne.module.css
+│       │               ├── AtomOne.stories.tsx
+│       │               └── AtomOne.test.tsx
+│       │   └── molecules
+│       │       └── MoleculeOne
+│       │               ├── IMoleculeOne.d.ts
+│       │               ├── MoleculeOne.tsx
+│       │               ├── MoleculeOne.module.css
+│       │               ├── MoleculeOne.stories.tsx
+│       │               └── MoleculeOne.test.tsx
+│       │   └── organisms
+│       │       └── OrganismOne
+│       │               ├── IOrganismOne.d.ts
+│       │               ├── OrganismOne.tsx
+│       │               ├── OrganismOne.module.css
+│       │               ├── OrganismOne.stories.tsx
+│       │               └── OrganismOne.test.tsx
+│       ├── logic
+│       │   └── exampleLogic
+│       │               └── IExampleLogic.d.ts
+│       │               └── exampleLogic.ts
+│       │               └── exampleLogic.test.ts
+│       └── types
+│           └── IType.d.ts
+├── pages
+│   ├── api
+│   │   └── hello.ts
+│   ├── _app.tsx
+│   ├── example.tsx
+│   └── index.tsx
+├── public
+│   └── favicon.ico
+├── styles
+│   └── globals.css
+├── README.md
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
