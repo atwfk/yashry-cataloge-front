@@ -2,7 +2,6 @@ module.exports = {
   roots: ["./pages", "./modules"],
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
-    // "^.+\\.svg$": "jest-svg-transformer",
   },
   globals: {
     "ts-jest": {
@@ -11,7 +10,6 @@ module.exports = {
     },
   },
   testMatch: ["**/?(*.)+(test).+(ts|js|tsx)"],
-  //   globalSetup: "./setupEnv.ts",
   setupFilesAfterEnv: ["./setup-tests.ts"],
   testEnvironment: "jsdom",
   testPathIgnorePatterns: ["./.next/", "./node_modules/"],
