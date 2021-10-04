@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import type { FC, ReactElement } from "react";
 import { IData } from "@modules/shared/types/IData";
 import Products from "@modules/shared/components/organisms/Products/Products";
@@ -14,23 +14,33 @@ import { useRouter } from "next/router";
 import withErrorHandler from "@modules/shared/components/HOC/WithErrorHandler/WithErrorHandler";
 import { IError } from "@modules/shared/api/IError";
 import { toast } from "react-toastify";
+import { IProductFilters } from "./IProductFilters";
 
 const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
-  const [products, setProducts] = useState(data.products);
-  const [colors, setColors] = useState(data.colors);
-  const [selectedColors, setSelectedColors] = useState<string[]>([]);
-  const [ratings, setRatings] = useState(data.ratings);
-  const [selectedRatings, setSelectedRatings] = useState<number[]>([]);
+  const [productsState, setProductsState] =
+    useState<IProductFilters.IProductsState>({
+      products: [],
+      colors: [],
+      selectedColors: [],
+      ratings: [],
+      selectedRatings: [],
+      prices: {},
+    });
   const [loading, setLoading] = useState(false);
-  const [prices, setPrices] = useState({
-    min: data.prices.min,
-    max: data.prices.max,
-    from: data.prices.from,
-    to: data.prices.to,
-  });
 
   const { query } = useRouter();
   const { categoryId } = query as { categoryId: string };
+
+  useEffect(() => {
+    setProductsState({
+      products: data.products,
+      colors: data.colors,
+      selectedColors: [],
+      ratings: data.ratings,
+      selectedRatings: [],
+      prices: data.prices,
+    });
+  }, [data]);
 
   const updateProductFilters = async (
     updatedSelectedColors: string[],
@@ -64,12 +74,18 @@ const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
       );
 
       setLoading(false);
-      setProducts(filteredProducts);
-      setSelectedColors(updatedSelectedColors);
-      setColors(filteredColors);
-      setSelectedRatings(updatedSelectedRatings);
-      setRatings(filteredRatings);
-      setPrices({ ...prices, from: updatedPrices.from, to: updatedPrices.to });
+      setProductsState({
+        products: filteredProducts,
+        colors: filteredColors,
+        selectedColors: updatedSelectedColors,
+        ratings: filteredRatings,
+        selectedRatings: updatedSelectedRatings,
+        prices: {
+          ...productsState.prices,
+          from: updatedPrices.from,
+          to: updatedPrices.to,
+        },
+      });
     } catch (error: unknown) {
       const { message } = error as IError.IErrorData;
       setLoading(false);
@@ -83,34 +99,34 @@ const ProductFilters: FC<IData.IProps> = ({ data }): ReactElement => {
         <div className="sticky h-screen overflow-y-scroll inset-0 space-y-3">
           <div>
             <PriceFilter
-              selectedColors={selectedColors}
-              selectedRatings={selectedRatings}
-              prices={prices}
+              selectedColors={productsState.selectedColors}
+              selectedRatings={productsState.selectedRatings}
+              prices={productsState.prices}
               updateProductFilters={updateProductFilters}
             />
           </div>
           <div>
             <ColorFilter
-              colors={colors}
-              selectedColors={selectedColors}
-              selectedRatings={selectedRatings}
-              prices={prices}
+              colors={productsState.colors}
+              selectedColors={productsState.selectedColors}
+              selectedRatings={productsState.selectedRatings}
+              prices={productsState.prices}
               updateProductFilters={updateProductFilters}
             />
           </div>
           <div>
             <RatingFilter
-              ratings={ratings}
-              selectedColors={selectedColors}
-              selectedRatings={selectedRatings}
-              prices={prices}
+              ratings={productsState.ratings}
+              selectedColors={productsState.selectedColors}
+              selectedRatings={productsState.selectedRatings}
+              prices={productsState.prices}
               updateProductFilters={updateProductFilters}
             />
           </div>
         </div>
       </div>
       <div className="w-full">
-        <Products products={products} loading={loading} />
+        <Products products={productsState.products} loading={loading} />
       </div>
     </div>
   );

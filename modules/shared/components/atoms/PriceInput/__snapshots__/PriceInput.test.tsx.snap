@@ -21,7 +21,7 @@ exports[`PriceInput snapshots should redner PriceInput with correct price values
       onBlur={[Function]}
       onChange={[Function]}
       type="number"
-      value={50}
+      value={0}
     />
     <input
       className="border-2 border-dark-grey rounded-md w-16"
@@ -31,7 +31,7 @@ exports[`PriceInput snapshots should redner PriceInput with correct price values
       onBlur={[Function]}
       onChange={[Function]}
       type="number"
-      value={150}
+      value={0}
     />
   </div>
 </div>
