@@ -29,7 +29,8 @@ jobs:
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
-            See the latest storybook changes for this PR [here](https://${{github.head_ref}}--62c1b8bce87ba497a5ffedff.chromatic.com) 🚀🚀 🎉 🎉
+            ## Storybook deployed successfully 🚀🚀 🎉 🎉
+            See the latest storybook changes for this PR [here](https://${{github.head_ref}}--${{secrets.STORYBOOK_DOMAIN}})
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Debug
