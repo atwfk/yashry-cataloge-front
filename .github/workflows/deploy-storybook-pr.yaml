@@ -29,7 +29,8 @@ jobs:
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
-            See the latest storybook changes for this PR [here](https://${BASE_BRANCH}--62c1b8bce87ba497a5ffedff.chromatic.com) 🚀🚀 🎉 🎉
+            See the latest storybook changes for this PR [here](https://${GITHUB_HEAD_REF}--62c1b8bce87ba497a5ffedff.chromatic.com) 🚀🚀 🎉 🎉
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        env:
-          BASE_BRANCH: ${{ github.base_ref }}
+
+      - name: Debug
+        run: echo ${{ env.BRANCH_NAME }}
