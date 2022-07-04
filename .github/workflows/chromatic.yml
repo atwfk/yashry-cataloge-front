@@ -37,10 +37,10 @@ jobs:
         node: ["14.x"]
         os: [ubuntu-latest]
     steps:
-      - name: Checkout repository
+      - name: Checkout pull request HEAD commit instead of merge commit
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Get commit data action
         id: last_commit
