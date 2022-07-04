@@ -28,15 +28,26 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitZeroOnChanges: true
 
+  output-storybook-url:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: ["14.x"]
+        os: [ubuntu-latest]
+    steps:
+      - name: Get Hash
+        id: hash
+        run: echo "git_hash=$(git rev-parse --short "$GITHUB_SHA")" >> $GITHUB_HASH
+
+      - name: Check Hash
+        run: echo "${{ env.hash }}"
+
       - name: Comment PR
-        if: ${{ github.head_ref }} != 'main'
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
             ### chromatic
             ### Storybook deployed successfully 🚀🚀 🎉 🎉
-            See the latest storybook changes for this PR [here](https://${{github.head_ref}}--${{secrets.STORYBOOK_DOMAIN}})
+            See the latest storybook changes for this PR [here](https://${{ env.hash }}--${{secrets.STORYBOOK_DOMAIN}})
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Debug
-        run: echo ${{ github.head_ref }}
