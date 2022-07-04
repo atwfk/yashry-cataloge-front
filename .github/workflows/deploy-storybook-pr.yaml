@@ -29,7 +29,8 @@ jobs:
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: |
-            ## Storybook deployed successfully 🚀🚀 🎉 🎉
+            ### deploy-storybook-pr
+            ### Storybook deployed successfully 🚀🚀 🎉 🎉
             See the latest storybook changes for this PR [here](https://${{github.head_ref}}--${{secrets.STORYBOOK_DOMAIN}})
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
