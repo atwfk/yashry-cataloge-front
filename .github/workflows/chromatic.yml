@@ -37,19 +37,8 @@ jobs:
         node: ["14.x"]
         os: [ubuntu-latest]
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Get last commit hash
-        uses: nrwl/last-successful-commit-action@v1
-        id: last_successful_commit
-        with:
-          branch: ${{github.head_ref}}
-          workflow_id: "chromatic.yml"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Check Hash
-        run: echo "${{ steps.last_successful_commit.outputs.commit_hash }}"
+      - name: Check short commit Hash
+        run: echo "${{ env.GIT_COMMIT_SHORT_SHA }}"
 
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v1
@@ -57,5 +46,5 @@ jobs:
           message: |
             ### chromatic
             ### Storybook deployed successfully 🚀🚀 🎉 🎉
-            See the latest storybook changes for this PR [here](https://${{ steps.last_successful_commit.outputs.commit_hash }}--${{secrets.STORYBOOK_DOMAIN}})
+            See the latest storybook changes for this PR [here](https://${{ env.GIT_COMMIT_SHORT_SHA }}--${{secrets.STORYBOOK_DOMAIN}})
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
