@@ -30,6 +30,7 @@ jobs:
 
   output-storybook-url:
     if: ${{ github.event_name == 'pull_request' }}
+    needs: chromatic-deployment
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
