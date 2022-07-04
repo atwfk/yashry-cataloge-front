@@ -37,8 +37,11 @@ jobs:
         node: ["14.x"]
         os: [ubuntu-latest]
     steps:
-      - name: Check short commit Hash
-        run: echo "${{ env.GIT_COMMIT_SHORT_SHA }}"
+      - name: Get commit data action
+        uses: rlespinasse/git-commit-data-action@v1
+
+      - name: Check last short commit id
+        run: echo "${{ env.GIT_COMMIT_SHORT_SHA  }}"
 
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v1
@@ -46,5 +49,5 @@ jobs:
           message: |
             ### chromatic
             ### Storybook deployed successfully 🚀🚀 🎉 🎉
-            See the latest storybook changes for this PR [here](https://${{ env.GIT_COMMIT_SHORT_SHA }}--${{secrets.STORYBOOK_DOMAIN}})
+            See the latest storybook changes for this PR [here](https://${{ env.GIT_COMMIT_SHORT_SHA  }}--${{secrets.STORYBOOK_DOMAIN}})
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
