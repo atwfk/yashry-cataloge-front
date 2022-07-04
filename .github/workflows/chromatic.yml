@@ -47,7 +47,7 @@ jobs:
         uses: pr-mpt/actions-commit-hash@v1
 
       - name: Check last short commit id
-        run: echo "${{ steps.commit.outputs.short  }}"
+        run: echo "${{ steps.last_commit.outputs.short  }}"
 
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v1
@@ -55,5 +55,5 @@ jobs:
           message: |
             ### chromatic
             ### Storybook deployed successfully 🚀🚀 🎉 🎉
-            See the latest storybook changes for this PR [here](https://${{ steps.commit.outputs.short  }}--${{secrets.STORYBOOK_DOMAIN}})
+            See the latest storybook changes for this PR [here](https://${{ steps.last_commit.outputs.short  }}--${{secrets.STORYBOOK_DOMAIN}})
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
