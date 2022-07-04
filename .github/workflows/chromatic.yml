@@ -43,10 +43,11 @@ jobs:
           fetch-depth: 0
 
       - name: Get commit data action
-        uses: rlespinasse/git-commit-data-action@v1
+        id: last_commit
+        uses: pr-mpt/actions-commit-hash@v1
 
       - name: Check last short commit id
-        run: echo "${{ env.GIT_COMMIT_SHORT_SHA  }}"
+        run: echo "${{ steps.commit.outputs.short  }}"
 
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v1
@@ -54,5 +55,5 @@ jobs:
           message: |
             ### chromatic
             ### Storybook deployed successfully 🚀🚀 🎉 🎉
-            See the latest storybook changes for this PR [here](https://${{ env.GIT_COMMIT_SHORT_SHA  }}--${{secrets.STORYBOOK_DOMAIN}})
+            See the latest storybook changes for this PR [here](https://${{ steps.commit.outputs.short  }}--${{secrets.STORYBOOK_DOMAIN}})
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
